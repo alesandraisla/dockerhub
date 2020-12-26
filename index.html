@@ -1,0 +1,452 @@
+<DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dockerhub 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    /*Layout*/
+
+
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: #E1E1E1;
+            box-sizing: border-box; 
+            max-width: 100%;
+            margin: 0 auto;
+
+        }
+        
+        header {
+            background-color: #099cec;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;            
+        }
+
+        .pai {
+           display: flex;
+           flex-direction: row;
+           margin: auto 0;
+
+       }
+
+       .segundo-pai {
+           margin: 0 auto;
+
+       }
+
+
+    /*Logo */
+        .logo img {
+            margin-left: 25px;
+        }
+
+        .foto img {
+            width: 100px;
+            padding: 2px 10px;
+        }
+
+    /* Menu Navegação */
+        .menu ul{
+           display:flex;
+           justify-content: flex-end;
+        }
+
+        .menu {
+            flex-grow: 1;
+            align-self:center;
+            /* margin-left: 50%; */
+            flex-wrap: wrap;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 10px; color:ivory;
+        }
+        
+        .menu li:hover {
+            opacity: 0.9;
+        }
+
+        .autenticacao {
+            flex-grow: 1;
+            align-self:center;
+            /* position: relative;
+            left: 10%; */
+        }
+
+        .botao {
+            border: 2px solid ivory;
+            align-self: center;
+            margin-right: 10px;
+            padding: 5px 20px;
+            border-radius: 10px;
+        }
+
+        .botao:hover {
+            background-color: white;
+            color: #099cec;
+        }
+        
+        /* Segunda navegação  */
+
+        .segundo-menu a {
+            color: #445d6e;
+            padding: 20px 30px;
+            display:flex;
+        }
+
+        .segundo-menu a:hover, .segundo-menu a:active {
+            color: #099cec;
+            border-bottom: #099cec solid 2px;
+            padding: 20px 30px 18px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: ivory;
+            margin-left: 20px;
+          
+        }
+
+        .segundo-menu{
+            display: flex;
+            background-color: #ffffff;
+        }
+
+        /* Postagem dos cards*/
+
+        section {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .card {
+            position: relative;
+            left: 168px;
+            width: 800px;
+            align-self:center;
+            display: flex;
+            flex-direction:row;
+            margin-top: 10px;
+            background-color: #ffffff;
+        }
+
+        .texto {
+            margin-top: 5px;
+            flex-grow: 1;
+            margin-left: 5px;
+            color: #27343b;
+            padding-bottom: 2px;
+        }
+
+        .foto {
+            margin-top: 5px;
+            padding: 2px 2px;
+
+        }
+        span {
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        h4, p {
+            font-size: 14px;
+        }
+
+        .estatistica {
+            position: absolute;
+            right:0;
+            transform: translateY(-28%);
+            text-align: center;
+            width: 20%;
+            text-transform: uppercase;
+        }            
+        
+        .estatistica p {
+            color: ivory;
+            background-color: #8ca8b8;
+            font-size: 11px;
+            padding: 5px; 
+        }
+          
+        .estatistica table  {
+            position: absolute;
+            right: 0;
+            font-size: 11px;
+            color: #27343b;
+            bottom: -30;
+        }
+
+        .caracteristicas a {
+            color: #27343b;
+            font-size: 11px;
+            background-color: #f1f4f6;
+            border: 6px solid #f1f4f6 ;
+            border-radius: 5px;
+        }
+
+        .caracteristicas ul {
+            display: flex;
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .caracteristicas ul li {
+            margin-right: 20px;
+        }
+
+        .caracteristicas ul li:hover {
+            opacity: 0.5;
+        }
+       
+       /* Coluna lateral */
+
+ 
+         .coluna {
+             /* display: flex;
+             flex-direction: column; */
+             margin: auto 0;
+             position: absolute;
+             left: 50px;
+         }
+
+        input {
+            position: absolute;
+        }
+        
+        div.listas {
+            position: relative; 
+            left: 20px;
+            bottom: 3px; 
+         } 
+
+        
+    /* Campo de pesquisa */
+
+        .pesquisa input {
+            background-color: rgba(255,255,255,.2);
+            width: 350px;
+            margin-left: 30px;
+            height: 36px;
+            top: -15;
+            border: 1px solid rgba(255,255,255,.2);
+            padding-right: 10px;
+            border-radius: 3px;
+            padding-left: 35px;
+            color: #f1f4f6;
+        }
+
+        .pesquisa {
+            position: relative;
+        }
+
+        .pesquisa input:focus {
+            background-color: #f1f4f6;
+            color: #4b575e;
+            outline: none;
+            border:1px solid rgba(255,255,255,.2);
+        }
+
+        
+        .pesquisa .fa-search {
+            color: #f1f4f6;
+            position: absolute;
+            left: 45px;
+            bottom: -10;
+        } 
+
+        .pesquisa input:focus + i{
+            color: black !important;
+        }
+
+        @media(max-width: 679px) {
+            section {
+                flex-direction: column;
+            }
+        }
+
+        /* On screens that are 992px wide or less, go from four columns to two columns */
+        @media screen and (max-width: 992px) {
+        .pai {
+            width: 50%;
+        }
+        }
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+        .pai {
+            width: 100%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg">
+        </div>
+        <div class="pesquisa">
+            <input type="text"  placeholder="Search for great content(e.g. mysql)">
+            <i class="fa fa-search"></i>
+        </div>
+        <nav class="menu">
+            <ul>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#princing">Princing</a></li>
+            <li><a href="#sign">Sign In</a></li>
+            </ul>
+        </nav>
+        <div class="autenticacao">
+            <a href="#registrar" class="botao">Sign Up</a>
+        </div>
+    </header>
+    <section>
+
+        <div class="segundo-menu">
+            
+            <a href=#docker>Docker</a>
+            <a href=#containers>Containers</a>
+            <a href=#plugins>Plugins</a>
+        </div>
+        <div class="pai">
+            <div class="coluna">
+                <h4>Filters</h4>
+                <h5>Imagens</h5>
+                <input type="checkbox"> <div class="listas">Verified Publisher</div>
+                <input type="checkbox"> <div class="listas">Official Imagens</div> 
+    
+                <h5>Categories</h5>
+                <input type="checkbox"> <div class="listas">Analytics</div> 
+                <input type="checkbox"> <div class="listas">Application frameworks</div> 
+                <input type="checkbox"> <div class="listas">Application Services</div> 
+                <input type="checkbox"> <div class="listas">Base imagens</div> 
+                <input type="checkbox"> <div class="listas">Databases</div> 
+                <input type="checkbox"> <div class="listas">DevOps Tools</div> 
+              
+            </div>
+    
+            <div class="segundo-pai">
+                <div class="card">
+                    <div class="foto"><img src="img/logo1.png"></div>    
+                    <div class="estatistica">
+                        <p>Official image</p>
+                        <table>
+                            <tr>
+                                <th>10M+</th>
+                                <th>10K+</th>
+                            </tr>
+                            <tr>
+                                <td>Downloads</td>
+                                <td>Stars</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="texto">
+                        <div class="item">
+                            <h4>Mysql</h4>
+                            <span><p>Updated a day ago</p></span>
+                            <p>MySQL is a widely used, open-source relational database management system (RDBMS).</p>
+                        </div>
+                        <div class="caracteristicas">
+                            <ul>
+                                <li>
+                                    <a href="#container">Container</a>
+                                </li>
+                                <li>
+                                    <a href="#linux">Linux</a>
+                                </li>
+                                <li>
+                                    <a href="#x86-64">x86-64</a>
+                                </li>
+                                <li>
+                                    <a href=#databases>Databases</a>
+                                </li>
+                            </ul>                
+                         </div>
+                    </div>
+                    
+                </div>
+        
+                <div class="card">
+                    <div class="foto"><img src="img/logo2.png"></div>    
+                    <div class="estatistica">
+                        <p>Official image</p>
+                        <table>
+                            <tr>
+                                <th>10M+</th>
+                                <th>515</th>
+                            </tr>
+                            <tr>
+                                <td>Downloads</td>
+                                <td>Stars</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="texto">
+                        <div class="item">
+                            <h4>MongoDB</h4>
+                            <span><p>Updated a day ago</p></span>
+                            <p>MadiaDB is a community-developed fork of MySQL intended to remain free under the GNU GPL.</p>
+                        </div>
+                        <div class="caracteristicas">
+                            <ul>
+                                <li>
+                                    <a href="#container">Container</a>
+                                </li>
+                                <li>
+                                    <a href="#linux">Linux</a>
+                                </li>
+                                <li>
+                                    <a href="386">386</a>
+                                </li>
+                                <li>
+                                    <a href="#ARM64">ARM 64</a>
+                                </li>
+                                <li>
+                                    <a href="#x86-64">x86-64</a>
+                                </li>
+                                <li>
+                                    <a href="#power">PowerPC 64 LE</a>
+                                </li>
+                                <li>
+                                    <a href=#databases>Databases</a>
+                                </li>
+                            </ul>                
+                         </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+     
+    
+
+        </div>
+        
+    </section>
+    
+    <!-- <footer>
+        <div class="rodape">
+            <img src="img/rodape.jpeg">
+            <div class="elementos-rodape">teste a</div>
+            <a>teste 1</a>
+            <a>teste 1</a>
+            <div class="elementos-rodape">teste 2</div>
+            <a>teste 2</a>
+            <a>teste 2</a>
+        </div>
+    </footer> -->
+
+    
+</body>
+
+</html>    

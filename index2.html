@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dockerhub 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        header {
+            grid-area: cabecalho;
+            background-color:#099cec;
+        }
+
+        nav {
+            grid-area: navegacao;
+            background-color: #ffffff;
+        }
+
+        main {
+            grid-area: conteudo;
+            background-color: #f5f5f6;
+        }
+
+        footer {
+            grid-area: rodape;
+            background-color: #022144;
+            margin: 0;
+            padding: 20px;
+          
+        }
+
+        aside{
+            grid-area: coluna;
+            background-color: #f5f5f6;
+        }
+
+  
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 60px 50px 80% auto ;
+            grid-template-areas: 
+                'cabecalho cabecalho'
+                'navegacao navegacao'
+                'coluna conteudo'
+                'rodape rodape'
+        }
+
+        /*Logo ********************************************************************/
+
+        .logo-principal {
+            margin-left: 30px;
+        }
+
+        .logo img {
+            margin-left: 25px;
+        }
+
+        .foto img {
+            width: 100px;
+            padding: 2px 10px;
+        }
+
+        /*pesquisa***************************************************************/
+
+        .pesquisa input{
+            position: absolute;
+            top: 20px;
+            left: 200px;
+            background-color: rgba(255,255,255,.2);
+            width: 250px;
+            margin-left: 30px;
+            height: 25px;
+            border: 1px solid rgba(255,255,255,.2);
+            padding-right: 10px;
+            border-radius: 3px;
+            padding-left: 35px;
+            color: #f1f4f6;
+      }
+
+        .pesquisa input:focus {
+            background-color: #f1f4f6;
+            color: #4b575e;
+            outline: none;
+            border:1px solid rgba(255,255,255,.2);
+            transition: 1s all;
+        }
+
+        
+        .pesquisa .fa-search {
+            color: #f1f4f6;
+            position: absolute;
+            top: 24px;
+            left: 240px;
+        } 
+
+        .pesquisa input:focus + i{
+            color: black !important;
+        }
+
+        /* Menu ***************************************************************/
+
+        .menu {
+            position: absolute;
+            top: 24px;
+            left: 960px;
+        }
+
+        .menu ul {
+            display: flex;
+            align-self:center;
+            flex-wrap: wrap;
+            list-style:none;
+        }
+
+        .menu li a {
+            padding-left: 20px;
+            color:ivory;
+            font-weight: bolder;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            
+        }
+
+        
+        .menu li:hover {
+            opacity: 0.9;
+        }
+
+        /* Botão ************************************************/
+
+        a.botao {
+            border: 2px solid ivory;
+            margin-left: 20px;
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-weight: bolder;
+            text-align: center;
+            transition: 0.5s all;
+        }
+
+
+        .botao:hover {
+            background-color: white;
+            color: #099cec;
+            font-weight: bolder;
+            transition: 1s all;
+            
+        }
+
+        /*Navegação **************************************************/
+
+        .navegacao {
+            color: #445d6e;
+            display:flex;
+            padding: 20px 30px;
+        }
+
+
+        a{
+            padding-bottom: 10px;
+        }
+
+
+        .navegacao a {
+            margin-left: 20px;
+            margin-right: 20px;
+            color: #445d6e;
+            text-decoration: none;
+        }
+
+
+        .navegacao a:hover, .navegacao a:active {
+            text-decoration: none;
+            transition: 300ms all;
+            color: #099cec;
+            border-bottom: #099cec solid 2px;
+            cursor: pointer;
+        }
+
+        /* Coluna ##################################################### */
+
+        .coluna {
+            margin: auto 0;
+            position: absolute;
+            left: 50px;
+        }
+
+
+        .coluna h4 {
+            padding-top: 35px;
+        }
+
+
+        input {
+            position: absolute;
+        }
+        
+
+        div.listas {
+            position: relative; 
+            left: 25px;
+            bottom: 3px; 
+            color: #445d6e;
+            padding-bottom: 10px;
+         } 
+
+
+         h4, h5 {
+             color: #445d6e;
+             margin-top: 20px;
+             margin-bottom: 20px;
+         }
+
+         /* Conteudo ############################# */
+
+         .conteudo {
+             background-color: #f5f5f6;
+         }
+        
+
+         .card {
+            width: 860px;
+            display: flex;
+            margin-right: 50px;
+            margin-left: 50px;
+            margin-top: 50px;
+            background-color: white;
+            height: 170px;
+         }
+
+
+         div img {
+            width: 70px;
+            height:60px;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-right: 10px;
+         }
+
+
+         .texto {
+            color: #445d6e;
+            font-size: 14px;
+         }
+
+
+         p {
+            margin-bottom: 20px;
+            margin-top: 10px;
+         }
+
+         
+         .caracteristicas ul {
+            list-style:none;
+         }
+
+
+         .caracteristicas ul li a {
+            color: #81939f;
+            background-color: #f1f4f6;
+            padding: 8px 8px;
+            font-size:12px;
+            margin-bottom: 20px;
+         }
+
+
+         .caracteristicas ul li a:hover {
+            opacity: 0.5;
+         }
+
+
+         .estatistica {
+             left: 30px;
+             margin-left: 50px;
+         }
+
+
+         .estatistica p {
+            color: #fffff4;
+            font-size: 11px;
+            padding-top: 10px;
+            text-align: center;
+            padding-left: 20px;
+         }
+
+
+         .destaque {
+            text-transform: uppercase;
+            height: 20px;
+            width: 135px;
+            background-color: #8ca8b8;
+            margin-top: 0px;
+         }
+
+
+         .estatistica table  {
+            font-size: 12px;
+            color: #27343b;
+        }
+
+
+        .estatistica table tr th, .estatistica table tr td {
+            padding-left: 10px;
+        }
+
+         /* Rodape ##################################### */
+
+        .lista-rodape {
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        .lista-rodape img {
+            position: absolute;
+            left: 35px;
+            width: 150px;
+            height: 80px;
+        }
+
+
+        .lista-rodape div h5 {
+            color: #f7f7f8;
+            font-size: 16px;
+        }
+
+
+        .lista-rodape li, .lista-rodape ul {
+            list-style:none;
+            margin-bottom: 12px;
+            padding: 0;
+        }
+
+
+        .lista-rodape a {
+            color: #8a98a8;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+
+        .lista-rodape a:hover {
+            color: #f7f7f8;
+        }
+
+
+     
+
+    </style>
+</head>
+<body>
+    <header>
+            <img class="logo-principal" src="img/logo.jpeg">
+        <div class="pesquisa">
+            <input type="text"  placeholder="Search for great content(e.g. mysql)">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="explore">Explore</a></li>
+                <li><a href="princing">Princing</a></li>
+                <li><a href="sign">Sign In</a></li>
+                <li> <a class="botao" href="signup">Sign up</a></li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="navegacao">
+            <a href="#docker">Docker</a>
+            <a href="#container">Container</a>
+            <a href="#plugins">plugins</a>
+        </div>
+    </nav>
+    <aside>
+        <div class="coluna">
+            <h4>Filtes</h4>
+            <h5>Images</h5>
+            <input type="checkbox"> <div class="listas"> Verified Publisher</div>
+            <input type="checkbox"> <div class="listas"> Official Imagens</div>
+
+            
+            <h5>Categories</h5>
+            <input type="checkbox"> <div class="listas">Analytics</div> 
+            <input type="checkbox"> <div class="listas">Application frameworks</div> 
+            <input type="checkbox"> <div class="listas">Application Services</div> 
+            <input type="checkbox"> <div class="listas">Base imagens</div> 
+            <input type="checkbox"> <div class="listas">Databases</div> 
+            <input type="checkbox"> <div class="listas">DevOps Tools</div> 
+        </div>
+    </aside>
+    <main> 
+        <div class="conteudo">
+            <div class="card">
+                <img src="img/logo1.png">
+                <div class="texto">
+                    <h4>Mysql</h4>
+                    <p>Updated a day ago</p>
+                    <p>MySQL is a widely used, open-source relational database management system (RDBMS).</p>
+                    <div class="caracteristicas">    
+                        <ul>
+                            <li>
+                                <a href="container">Container</a>
+                                <a href="linux">Linux</a>
+                                <a href="x86">x86-64</a>
+                                <a href="databases">Databases</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+             
+                <div class="estatistica">
+                    <p class="destaque">Official image</p>
+                    <table>
+                        <tr>
+                            <th>10M+</th>
+                            <th>10K+</th>
+                        </tr>
+                        <tr>
+                            <td>Downloads</td>
+                            <td>Stars</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        
+        </div>
+        <div class="conteudo">
+            <div class="card">
+                <img src="img/logo2.png">
+                <div class="texto">
+                    <h4>Mysql</h4>
+                    <p>Updated a day ago</p>
+                    <p>MySQL is a widely used, open-source relational database management system (RDBMS).</p>
+                    <div class="caracteristicas">    
+                        <ul>
+                            <li>
+                                <a href="container">Container</a>
+                                <a href="linux">Linux</a>
+                                <a href="x86">x86-64</a>
+                                <a href="databases">Databases</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <p class="destaque">Official image</p>
+                    <table>
+                        <tr>
+                            <th>10M+</th>
+                            <th>10K+</th>
+                        </tr>
+                        <tr>
+                            <td>Downloads</td>
+                            <td>Stars</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+          
+        </div>
+    </main>
+    <footer>
+        <div class="lista-rodape">
+            <div>
+                <img src="img/rodape.jpeg">
+            </div>
+            <div>
+                <h5>Why Docker</h5>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#what">What is a Container</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Products</h5>
+                <ul><li><a href="#product">Product Overview</a></li></ul>
+                <h5>Product Offerings</h5>
+                <ul>
+                    <li><a href="#docker1">Docker Desktop</a></li>
+                    <li><a href="#docker2">Docker hub</a></li>
+                </ul>
+                <h5>Features</h5>
+                <ul>
+                    <li><a href="#container">Container Runtime</a></li>
+                    <li><a href="#developer">Developer Tools</a></li>
+                    <li><a href="#dockerapp">Docker App</a></li>
+                    <li><a href="#kubernetes">Kubernetes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Developers</h5>
+                <ul>
+                    <li><a href="#getting">Getting Started</a></li>
+                    <li><a href="#play">Play with Docke</a>r</li>
+                    <li><a href="#community"> Community</a></li>
+                    <li><a href="#open">Open Source</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#hub">Hub Release Notes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#recources">Resources</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#costumers">Costumers</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#newsroom">Newsroom</a></li>
+                    <li><a href="#events">Events and Webinars</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+</body>
+</html>
